@@ -17,11 +17,13 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,29 +31,39 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+        Toast.makeText(this, "Designed with ❤ By Krishna Kumar", Toast.LENGTH_LONG).show();
+
+        TextView number = findViewById(R.id.numbers);
+        TextView family = findViewById(R.id.family);
+        TextView colors = findViewById(R.id.colors);
+        TextView phrases = findViewById(R.id.phrases);
+
+        number.setOnClickListener(View -> {
+            Intent intent_NumberActivity = new Intent(MainActivity.this, NumberActivity.class);
+            startActivity(intent_NumberActivity);
+            Toast.makeText(this,"Opening Numbers",Toast.LENGTH_SHORT).show();
+
+        });
+
+        colors.setOnClickListener(View -> {
+            Intent intent_ColorsActivity = new Intent(MainActivity.this, ColorsActivity.class);
+            startActivity(intent_ColorsActivity);
+            Toast.makeText(this,"Opening Colors",Toast.LENGTH_SHORT).show();
+        });
+        family.setOnClickListener(View -> {
+            Intent intent_FamilyActivity = new Intent(MainActivity.this, FamilyActivity.class);
+            startActivity(intent_FamilyActivity);
+            Toast.makeText(this,"Opening Family",Toast.LENGTH_SHORT).show();
+
+        });
+        phrases.setOnClickListener(View -> {
+            Intent intent_PhrasesActivity = new Intent(MainActivity.this, PhrasesActivity.class);
+            startActivity(intent_PhrasesActivity);
+            Toast.makeText(this,"Opening Phrases",Toast.LENGTH_SHORT).show();
+
+        });
+
+
     }
 
-    public void openNumberActivity(View view) {
-        Intent intent_NumberActivity = new Intent(MainActivity.this,NumberActivity.class);
-        startActivity(intent_NumberActivity);
-
-    }
-
-    public void openColorsActivity(View view) {
-        Intent intent_ColorsActivity = new Intent(MainActivity.this,ColorsActivity.class);
-        startActivity(intent_ColorsActivity);
-    }
-
-
-    public void openPhrasesActivity(View view) {
-        Intent intent_PhrasesActivity = new Intent(MainActivity.this,PhrasesActivity.class);
-        startActivity(intent_PhrasesActivity);
-    }
-
-
-    public void openFamilyActivity(View view) {
-        Intent intent_FamilyActivity = new Intent(MainActivity.this,FamilyActivity.class);
-        startActivity(intent_FamilyActivity);
-
-    }
 }
