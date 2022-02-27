@@ -15,8 +15,10 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
-// import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,5 +29,29 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+    }
+
+    public void openNumberActivity(View view) {
+        Intent intent_NumberActivity = new Intent(MainActivity.this,NumberActivity.class);
+        startActivity(intent_NumberActivity);
+
+    }
+
+    public void openColorsActivity(View view) {
+        Intent intent_ColorsActivity = new Intent(MainActivity.this,ColorsActivity.class);
+        startActivity(intent_ColorsActivity);
+    }
+
+
+    public void openPhrasesActivity(View view) {
+        Intent intent_PhrasesActivity = new Intent(MainActivity.this,PhrasesActivity.class);
+        startActivity(intent_PhrasesActivity);
+    }
+
+
+    public void openFamilyActivity(View view) {
+        Intent intent_FamilyActivity = new Intent(MainActivity.this,FamilyActivity.class);
+        startActivity(intent_FamilyActivity);
+
     }
 }
