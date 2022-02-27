@@ -10,18 +10,23 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ColorsActivity"
+            android:label="Colors"
             android:exported="false" />
         <activity
             android:name=".FamilyActivity"
+            android:label="Family"
             android:exported="false" />
         <activity
             android:name=".NumberActivity"
+            android:label="Number"
             android:exported="false" />
         <activity
             android:name=".PhrasesActivity"
+            android:label="Phrases"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:label="Miwok"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
